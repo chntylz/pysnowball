@@ -32,4 +32,9 @@ f10_indicator = "https://stock.xueqiu.com/v5/stock/f10/cn/indicator.json?symbol=
 
 # real time
 realtime_quote = "https://stock.xueqiu.com/v5/stock/realtime/quotec.json?symbol="
-realtime_pankou = "https://stock.xueqiu.com/stock/pankou.json?symbol="
+#realtime_pankou = "https://stock.xueqiu.com/stock/pankou.json?symbol="
+realtime_pankou = "https://stock.xueqiu.com/v5/stock/realtime/pankou.json?symbol="
+
+#his_data_head = "https://stock.xueqiu.com/v5/stock/chart/kline.json?symbol=SZ000401&begin=1609289892189&period=day&type=before&count=-284&indicator=kline,pe,pb,ps,pcf,market_capital,agt,ggt,balance"
+his_data_head = "https://stock.xueqiu.com/v5/stock/chart/kline.json?symbol="
+his_data_tail = "&period=day&type=before&count=-284&indicator=kline,pe,pb,ps,pcf,market_capital,agt,ggt,balance"
