@@ -15,9 +15,11 @@ def pankou(symbol):
     url = api_ref.realtime_pankou+symbol
     return utls.fetch_without_token(url)
 
-def his_data(symbols):
-    url = api_ref.his_data_head+symbols + '&begin=' + str(round(time.time() * 1000))\
-            + api_ref.his_data_tail
-    print('his_data url=%s' % url)
+def his_data(symbols, def_cnt=1):
+    url = api_ref.his_data+symbols
+    url = url +  "&begin=" + str(round(time.time() * 1000))
+    tail = "&period=day&type=before&count=-" + str(def_cnt) + "&indicator=kline,pe,pb,ps,pcf,market_capital,agt,ggt,balance"
+    url = url + tail
+    #print('his_data url=%s' % url)
     return utls.fetch(url)
 
