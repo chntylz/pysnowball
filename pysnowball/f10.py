@@ -20,15 +20,19 @@ def industry(symbol):
     return utls.fetch(url)
 
 
-def holders(symbol):
+def holders(symbol, size=10):
     url = api_ref.f10_holders+symbol
+    url += '&extend=true&page=1&size='
+    url += str(size)
     return utls.fetch(url)
 
 
 def bonus(symbol,page=1,size=10):
     url = api_ref.f10_bonus+symbol
-    url = url + '&page='+str(page)
-    url = url + '&size='+str(size)
+    url += '&page='
+    url += str(page)
+    url += '&size='
+    url += str(size)
     return utls.fetch(url)
 
 

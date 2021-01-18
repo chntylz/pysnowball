@@ -4,6 +4,9 @@ import json
 import pysnowball.cons as cons
 import pysnowball.token as token
 
+debug = 0
+#debug = 1
+
 def fetch(url):
     HEADERS = {'Host': 'stock.xueqiu.com',
                'Accept': 'application/json',
@@ -14,11 +17,12 @@ def fetch(url):
                'Connection': 'keep-alive'}
 
     response = requests.get(url,headers=HEADERS)
-
-    # print(url)
-    # print(HEADERS)
-    # print(response)
-    # print(response.content)
+    
+    if debug:
+        print(url)
+        print(HEADERS)
+        print(response)
+        print(response.content)
 
     if response.status_code != 200:
         raise Exception(response.content)
@@ -36,10 +40,11 @@ def fetch_without_token(url):
 
     response = requests.get(url, headers=HEADERS)
 
-    # print(url)
-    # print(HEADERS)
-    # print(response)
-    # print(response.content)
+    if debug:
+        print(url)
+        print(HEADERS)
+        print(response)
+        print(response.content)
 
     if response.status_code != 200:
         raise Exception(response.content)
