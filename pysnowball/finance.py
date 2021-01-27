@@ -26,7 +26,6 @@ def indicator(symbol, is_annuals=0, count=10):
         url = url + '&type=Q4&count='
     else:
         url += '&type=all&is_detail=true&count='
-
     url += str(count)
 
     return utls.fetch(url)
@@ -39,7 +38,7 @@ def balance(symbol, is_annuals=0, count=10):
     if is_annuals == 1:
         url = url + '&type=Q4'
 
-    url = url + '&count='+str(count)
+    url = url + '&type=all&is_detail=true&count='+str(count)
 
     return utls.fetch(url)
 
