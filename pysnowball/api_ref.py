@@ -37,3 +37,4 @@ realtime_pankou = "https://stock.xueqiu.com/v5/stock/realtime/pankou.json?symbol
 
 #his_data_head = "https://stock.xueqiu.com/v5/stock/chart/kline.json?symbol=SZ000401&begin=1609289892189&period=day&type=before&count=-284&indicator=kline,pe,pb,ps,pcf,market_capital,agt,ggt,balance"
 his_data = "https://stock.xueqiu.com/v5/stock/chart/kline.json?symbol="
+share_quote="https://stock.xueqiu.com/v5/stock/quote.json?symbol="
