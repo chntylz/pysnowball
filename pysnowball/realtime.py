@@ -20,10 +20,11 @@ def pankou(symbol):
     url = api_ref.realtime_pankou+symbol
     return utls.fetch_without_token(url)
 
-def his_data(symbols, def_cnt=1):
+    #period: 30m, 60m, 120m, day, week, month
+def his_data(symbols, period='day', def_cnt=1):
     url = api_ref.his_data+symbols
     url = url +  "&begin=" + str(round(time.time() * 1000))
-    tail = "&period=day&type=before&count=-" + str(def_cnt) + "&indicator=kline,pe,pb,ps,pcf,market_capital,agt,ggt,balance"
+    tail = "&period=" + str(period) + "&type=before&count=-" + str(def_cnt) + "&indicator=kline,pe,pb,ps,pcf,market_capital,agt,ggt,balance"
     url = url + tail
     #print('his_data url=%s' % url)
     return utls.fetch(url)
